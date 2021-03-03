@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="card mt-5" style="align-items: center;">
+        <h1>Music Libraries</h1>>
+        <button (click)="getallmusiclibrary()">View all music library</button>
+    </div>
+    <div class="mt-5">
+        <table class="table table-bordered">
+            <thead class="thead">
+                <tr *ngIf="showdetails">
+                    <th>Song Id</th>
+                    <th>Song Name </th>
+                    <th>Artist Name </th>
+                    <th>Year Of Realease</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr *ngFor="let m of musiclibrary">
+                    <td>{{m.songId}}</td>
+                    <td>{{m.songName}}</td>
+                    <td>{{m.artistName}}</td>
+                    <td>{{m.yearOfRealease}}</td>
+                    <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updatemusiclib(m)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deletemusiclibrary(m)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update MusicLibrary</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card mt-5" style="align-items: center;">
+                    <h1>Update MusicLibrary</h1>
+                </div>
+                <div class="card mt-5" style="padding: 20px;">
+                    <form #updatemusic="ngForm" (ngSubmit)="updatemusiclibrary(updatemusic)">
+                        <div class="form-group">
+                            <label for="songId">Song Id</label>
+                            <input type="text" name="songId" id="songId" class="form-control" [(ngModel)]="musiclibrarytoupdate.songId">
+                        </div>
+                        <div class="form-group">
+                            <label for="songName">Song Name</label>
+                            <input type="text" name="songName" id="songName" class="form-control" [(ngModel)]="musiclibrarytoupdate.songName">
+                        </div>
+                        <div class="form-group">
+                            <label for="artistName">Artist Name</label>
+                            <input type="text" name="artistName" id="artistName" class="form-control" [(ngModel)]="musiclibrarytoupdate.artistName">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfRelease">Year Of Release</label>
+                            <input type="text" name="yearOfRelease" id="yearOfRelease" class="form-control" [(ngModel)]="musiclibrarytoupdate.yearOfRealease">
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="submit" value="Update Music Library" class="btn btn-primary w-100" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <form #ngForm="searchform" (onSubmit)="searchmusiclibrary(searchform)">
+    <label>Search musiclibrary</label><br>
+    <input type="text" name="songId" ngModel>
+    <input type="submit" value="search" />
+</form> -->

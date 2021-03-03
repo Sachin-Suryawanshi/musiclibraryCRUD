@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card mt-5" style="align-items: center; ">
+        <h1>Add Music Library</h1>
+    </div>
+    <div class="card mt-5" style="padding: 20px;">
+        <form #insertmusic="ngForm" (ngSubmit)="insertmusiclibrary(insertmusic)">
+            <div class="form-group">
+                <label for="name">Song Name</label>
+                <input type="text" name="songName" id="songName" class="form-control" placeholder="Enter Song Name" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="email">Artist Name</label>
+                <input type="text" name="artistName" id="artistName" class="form-control" placeholder="Enter Artist Name" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="password">Year Of Realese</label>
+                <input type="text" name="yearOfRealease" id="yearOfRealease" class="form-control" placeholder="Enter Year Of Realese " ngModel>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Insert Music Library" class="btn btn-success w-100" />
+            </div>
+        </form>
+    </div>
+
+</div>

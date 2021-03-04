@@ -1,0 +1,57 @@
+<!-- <h2>{{content |json}}</h2>>
+<h2>{{page}}</h2> -->
+<!-- <div class="search-results" (scrolled)="doInfinite()"> -->
+<div class="container">
+    <div>
+        <h2>Music Libraries</h2>
+    </div>
+    <div class="search-results" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="10" (scrolled)="doInfinite()" [scrollWindow]="false">
+
+        <div>
+
+            <div class="mt-5">
+                <table class="table  table-hover table-striped table-bordered">
+                    <thead class="thead table-dark">
+                        <tr>
+                            <th>Song Id</th>
+                            <th>Song Name </th>
+                            <th>Artist Name </th>
+                            <th>Year Of Realease</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tdemo tbody" style="height: 150px;">
+                        <tr *ngFor="let m of musiclibrary">
+                            <td>{{m.songId}}</td>
+                            <td>{{m.songName}}</td>
+                            <td>{{m.artistName}}</td>
+                            <td>{{m.yearOfRealease}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Song Id</th>
+                            <th>Song Name </th>
+                            <th>Artist Name </th>
+                            <th>Year Of Realease</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- <div class="main-panel">
+    <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50" (scrolled)="doInfinite()" [scrollWindow]="false">
+        <div *ngFor="let ml of musiclibrary">
+            <div>
+                {{ml | json}}
+            </div>
+        </div>
+    </div>
+</div> -->

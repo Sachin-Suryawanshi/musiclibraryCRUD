@@ -1,0 +1,13 @@
+.search-results {
+    overflow: auto;
+    height: 800px;
+}
+
+.td {
+    height: 150px!important;
+}
+
+.main-panel {
+    height: 100%;
+    overflow-y: scroll;
+}
